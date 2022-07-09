@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class hellocontroller {
+public class hellocontroller {//sanghyun
     @GetMapping("hello")     // ~~/hello 로 mapping된다.
     //viewResolver 동작
     public String hello(Model model){
