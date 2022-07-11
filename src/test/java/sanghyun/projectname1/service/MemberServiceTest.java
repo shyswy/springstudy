@@ -19,7 +19,7 @@ class MemberServiceTest {
     //여기서 만든   memberRepository 와 memberService의 memberRepository는 서로 '다른' 객체이다.
     // 따라서 아주 혹시나, 다른 결과가 나올 수 있다. (static 선언이 되어 class에 붙어서 이 경우는 문제 x 지만
     //만약 static 안붙어있으면 서로 다른 DB가 되어 올바르지 않게 됨)   서로 같은 instance 로 안전하게 만들어주자!
-
+//이런 최소단위 테스트가 좋은 테스트이다!
 
     MemberService memberService;
     MemoryMemberRepository memberRepository;

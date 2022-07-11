@@ -7,6 +7,10 @@ import sanghyun.projectname1.domain.Member;
 
 import java.util.List;
 
+
+//스프링이 아닌 순수 자바 코드를 테스트 하는것
+//h2 db를 사용하면 자바코드만으로 테스트 안됨 (db커넥션 정보도  스프링 부트 가 지니고 있고 등등....
+
 class MemoryMemberRepositoryTest { //여기서 디버그시 내부 전체 테스트 가능.
 
 
