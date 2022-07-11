@@ -10,7 +10,7 @@ import sanghyun.projectname1.repository.MemoryMemberRepository;
 import sanghyun.projectname1.service.MemberService;
 
 import javax.sql.DataSource;
-
+//change
 @Configuration
 public class SpringConfig {
 
