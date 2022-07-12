@@ -1,6 +1,7 @@
 package sanghyun.projectname1.service;
 
 
+import org.springframework.test.annotation.Commit;
 import sanghyun.projectname1.domain.Member;
 import sanghyun.projectname1.repository.MemberRepository;
 import sanghyun.projectname1.repository.MemoryMemberRepository;
@@ -26,6 +27,8 @@ class MemberServiceIntegrationTest {
     @Autowired MemberService memberService;
     @Autowired MemberRepository memberRepository;
     @Test
+
+    //@Commit  // 하면 실제 db에 들어간다 ( transactional 로 복구하지 않고 commit
     public void 회원가입() throws Exception {
         //Given
         Member member = new Member();

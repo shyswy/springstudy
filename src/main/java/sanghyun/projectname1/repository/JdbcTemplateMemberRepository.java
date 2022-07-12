@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-//jdbc 코드 >> jdbc의 반복적인 코드 제거 가능
+//jdbcTemplate  >> jdbc의 반복적인 코드 제거 가능   쿼리는 직접 작성해야
 public class JdbcTemplateMemberRepository implements MemberRepository {
     private final JdbcTemplate jdbcTemplate;
     public JdbcTemplateMemberRepository(DataSource dataSource) {

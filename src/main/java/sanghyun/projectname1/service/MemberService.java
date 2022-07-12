@@ -32,12 +32,39 @@ public class MemberService {  //ctrl + shift + t 로 바로 Tc 생성 가능!
         //Optional<Member> result = memberRepository.findByName(member.getName());
         //ctrl + alt + v 로 바로 타입에 맞는 변수 할당
 
+//메소드 호출시간??  변경점 있으면 모두 일일이 찾아가서 바꿔줘야한다.
+        /*
+        long start = System.currentTimeMillis();
+        try {
+            validate(member);    //함수 내의 특정 부분을 함수로 추출할시 crtl+shift+alt+ t >> extract method로!!!
+
+            memberRepository.save(member);
+
+            return member.getId();
+
+        }finally {//위의 동작 수행 후 끝난 시간 체크
+            long finish = System.currentTimeMillis();
+            long timeMs=finish-start;
+            System.out.println("join= " + timeMs+ "ms");
+        }
+
+         */
+
+
 
         validate(member);    //함수 내의 특정 부분을 함수로 추출할시 crtl+shift+alt+ t >> extract method로!!!
 
         memberRepository.save(member);
 
         return member.getId();
+
+
+        // Aop: 공통 과 핵심 관심 사항을 구분한다.
+        // 필요한 상황: 모든 메소드의 호출 시간 측정,   공통관심 사항 vs 핵심관심 사항 , 회원 가입 시간, 회원 조회시간 측정시
+        // ex) 시간측정 로직은 공통관심사항. 이것을 원하는 곳에 적용시키는 것.
+
+
+
     }
 
     private void validate(Member member) {    //중복회원 검사.
@@ -51,8 +78,20 @@ public class MemberService {  //ctrl + shift + t 로 바로 Tc 생성 가능!
 
     //전체 회원 조회
     public List<Member> findMember(){
-        return memberRepository.findAll();
+        /*
+        long start = System.currentTimeMillis();
+        try {
+            return memberRepository.findAll();
+        } finally{
+            long finish = System.currentTimeMillis();
+            long timeMs=finish-start;
+            System.out.println("findMembers "+timeMs+"ms");
+        }
 
+         */
+
+        //Aop로 적용!
+        return memberRepository.findAll();
     }
     public Optional<Member> findOne(Long memberId){
         return memberRepository.findById(memberId);

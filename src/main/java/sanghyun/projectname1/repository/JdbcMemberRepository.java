@@ -8,6 +8,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+//jdbc
+
+
 
 //jdbc는 과거의 db 방식! 그냥 전에는 이랬었다~ 만 알아두자.
 //반복적인 영역이 많음.
